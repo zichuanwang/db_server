@@ -14,8 +14,8 @@
 ActiveRecord::Schema.define(version: 20131126061611) do
 
   create_table "audios", force: true do |t|
-    t.string   "complete_semantic"
-    t.string   "segmented_semantic"
+    t.string   "complete_semantic",  default: "", null: false
+    t.string   "segmented_semantic", default: "", null: false
     t.string   "audio_file_name"
     t.string   "audio_content_type"
     t.integer  "audio_file_size"

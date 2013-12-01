@@ -3,7 +3,7 @@ class ApiReturnStatus
   attr_reader :Id, :Memo
 
   STATUS = {
-    "000" => "Succeed。",
+    "000" => "Succeed",
     "999" => "Unknown Failure"
   }
   
