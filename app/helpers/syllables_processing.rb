@@ -3743,8 +3743,8 @@ module SyllablesProcessing
       hash = 0
       (0..[han_word.length - 1, 7].min).each do |index|
         han_char = han_word[index]
+        if han_char.match(/[\u3002\uff1b\uff0c\uff1a\u201c\u201d\uff08\uff09\u3001\uff1f\u300a\u300b,\.]/) then next end
         char_hash = @@pinyin_normal_hash_index[SyllablesProcessing.eliminate_tone(@@pinyin_dict[han_char][0])]
-        puts "char_hash: " + (char_hash << index * 9).to_s()
         hash += char_hash << index * 9
       end
       hash
@@ -3754,6 +3754,7 @@ module SyllablesProcessing
       hash = 0
       (0..[han_word.length - 1, 5].min).each do |index|
         han_char = han_word[index]
+        if !han_char.match(/[\u2E80-\u9FFF]/) then next end
         char_hash = @@pinyin_tone_hash_index[@@pinyin_dict[han_char][0]]
         puts "char_hash: " + (char_hash << index * 11).to_s()
         hash += char_hash << index * 11
