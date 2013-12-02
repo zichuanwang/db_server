@@ -1,5 +1,6 @@
 class AudioController < ApplicationController
 	include ApplicationHelper
+  include TextSegmentation
 	skip_before_filter :verify_authenticity_token
 
 	def self.init_syllables_hashtable
@@ -18,7 +19,7 @@ class AudioController < ApplicationController
 
   def create
     @audio = Audio.new(audio_params)
-    @audio.segmented_semantic = @audio.complete_semantic
+    @audio.segmented_semantic = TextSegmentation.text_segment(@audio.complete_semantic)
     @audio.audio = params[:audio_file]
     if @audio.save
       # Handle a successful save.
@@ -45,7 +46,6 @@ class AudioController < ApplicationController
 	private 
 
 	def audio_params
-    puts params.require(:audio).permit(:complete_semantic)
     params.require(:audio).permit(:complete_semantic)
   end
 end

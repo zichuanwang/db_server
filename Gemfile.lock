@@ -27,6 +27,7 @@ GEM
       tzinfo (~> 0.3.37)
     arel (4.0.1)
     atomic (1.1.14)
+    blankslate (3.1.2)
     builder (3.1.4)
     climate_control (0.0.3)
       activesupport (>= 3.0)
@@ -42,6 +43,7 @@ GEM
     erubis (2.7.0)
     excon (0.28.0)
     execjs (2.0.2)
+    ffi (1.9.3)
     fog (1.18.0)
       builder
       excon (~> 0.28.0)
@@ -100,6 +102,9 @@ GEM
     rdoc (3.12.2)
       json (~> 1.4)
     ruby-hmac (0.4.0)
+    rubypython (0.6.3)
+      blankslate (>= 2.1.2.3)
+      ffi (>= 1.0.7)
     sass (3.2.12)
     sass-rails (4.0.1)
       railties (>= 4.0.0, < 5.0)
@@ -145,6 +150,7 @@ DEPENDENCIES
   jquery-rails
   paperclip (~> 3.5.1)
   rails (= 4.0.1)
+  rubypython
   sass-rails (~> 4.0.0)
   sdoc
   sqlite3
