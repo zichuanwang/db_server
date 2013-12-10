@@ -120,7 +120,7 @@ class AudioController < ApplicationController
     puts audios_weight
 
     second_result = []
-    audios_weight.sort_by{|audio, weight| weight}[0..[5, audios_weight.length].min].each do |audio_weight_pair|
+    audios_weight.sort_by{|audio, weight| -weight}[0..[5, audios_weight.length].min].each do |audio_weight_pair|
       second_result << audio_weight_pair[0]
     end
 

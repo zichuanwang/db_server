@@ -3,6 +3,7 @@
 module SyllablesProcessing
   $DICT_COMBO = {
     "yā,ā" => "吖",
+
     "ā,ē" => "阿",
     "hē,a,kē" => "呵",
     "shà,á" => "嗄",
@@ -3793,10 +3794,14 @@ module SyllablesProcessing
             @@pinyin_normal_hash_index[normal_py] = normal_counter
             normal_counter += 1
           end
+          puts 'normal_counter'
+          puts normal_counter
           if !@@pinyin_tone_hash_index.has_key?(tone_py)
             @@pinyin_tone_hash_index[tone_py] = tone_counter
             tone_counter += 1
           end 
+          puts 'tone_counter'
+          puts tone_counter
         end
       end
     end
